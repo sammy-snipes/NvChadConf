@@ -1,4 +1,4 @@
 require("mason-conform").setup({
     -- List of formatters to ignore during install
-    ignore_install = { "alejandra" },
+    ignore_install = { "alejandra", "black", "stylua" },
 })

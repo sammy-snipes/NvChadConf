@@ -6,17 +6,32 @@
 local M = {}
 
 M.base46 = {
-    theme = "catppuccin",
-    transparency = true,
-    -- opacity = 1.0,
+	theme = "catppuccin",
+	-- opacity = 0.7,
 }
+
+M.ui = {
+	transparency = true,
+	theme = "catppuccin",
+	tabufline = {
+		-- enabled = false,
+	},
+}
+
 M.plugins = {
-    override = {
-        ["nvim-telescope/telescope.nvim"] = {
-            defaults = {
-                change_dir = false,
-            },
-        },
-    },
+	override = {
+		["nvim-telescope/telescope.nvim"] = {
+			defaults = {
+				change_dir = false,
+				cwd_to_path = false,
+			},
+			pickers = {
+				find_files = {
+					cwd = vim.fn.getcwd(),
+					follow = false,
+				},
+			},
+		},
+	},
 }
 return M
